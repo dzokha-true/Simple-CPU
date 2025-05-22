@@ -9,8 +9,8 @@ module control_unit (
     // Opcodes (match global definition)
     parameter OP_LOAD = 4'b0000;
     parameter OP_MOV  = 4'b0001;
-    parameter OP_XOR  = 4'b0010;
-    parameter OP_ADD  = 4'b0011;
+    parameter OP_ADD  = 4'b0010;
+    parameter OP_XOR  = 4'b0011;
 
     // ALU Operation Select Codes (match ALU module)
     parameter ALU_OP_PASS_B = 2'b00;
@@ -18,7 +18,7 @@ module control_unit (
     parameter ALU_OP_XOR    = 2'b10;
 
     always @(*) begin // Combinational decode
-        // Default values (important for unspecified unknown behavior)
+        // Default values (important for unspecified opcodes/NOP behavior)
         reg_write_enable     = 1'b0;
         alu_op_select        = ALU_OP_PASS_B; // Default to a safe operation
         alu_operand_b_select = 1'b0;         // Default to register source
