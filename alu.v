@@ -1,23 +1,33 @@
 module alu (
-    input [7:0] operand_a,
-    input [7:0] operand_b,
-    input [1:0] alu_op_select, // Control signal for operation
-    output reg [7:0] result
+    input  [15:0] alu_in_a,
+    input  [15:0] alu_in_b,
+    input  [2:0]  alu_op_sel, // 00:ADD, 01:XOR, 10:SUB, 11:PASS_B
+    output reg [15:0] alu_result,
+    output reg        zero_flag,
+    output reg        negative_flag
 );
 
-    // ALU Operation Select Codes
-    parameter ALU_OP_PASS_B = 2'b00;
-    parameter ALU_OP_ADD    = 2'b01;
-    parameter ALU_OP_XOR    = 2'b10;
-    // parameter ALU_OP_UNUSED = 2'b11; // Future use
+    localparam ALU_ADD    = 3'b000;
+    localparam ALU_XOR    = 3'b001;
+    localparam ALU_SUB    = 3'b010;
+    localparam ALU_AND    = 3'b011;   
+    localparam ALU_PASS_B = 3'b111;
 
-    always @(*) begin // Combinational
-        case (alu_op_select)
-            ALU_OP_PASS_B: result = operand_b;
-            ALU_OP_ADD:    result = operand_a + operand_b;
-            ALU_OP_XOR:    result = operand_a ^ operand_b;
-            default:       result = 8'h00; // Default or error case
+
+    always @(*) begin
+        case (alu_op_sel)
+            ALU_ADD:    alu_result = alu_in_a + alu_in_b;
+            ALU_XOR:    alu_result = alu_in_a ^ alu_in_b;
+            ALU_SUB:    alu_result = alu_in_a - alu_in_b; // For CMP
+            ALU_PASS_B: alu_result = alu_in_b;           // For LOAD immediate (if routed via ALU) or MOV
+            default:    alu_result = 16'hXXXX;
         endcase
-    end
 
+        if (alu_result == 16'b0) begin
+            zero_flag = 1'b1;
+        end else begin
+            zero_flag = 1'b0;
+        end
+        negative_flag = alu_result[15]; // MSB
+    end
 endmodule
