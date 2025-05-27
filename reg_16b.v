@@ -3,7 +3,7 @@ module ff(
 	output Q
 );
 	always @(posedge clk, reset) begin
-    case ({rest, en}) 
+    case ({reset, en}) 
       2'b1x: Q <= 0; // set output to zero on clear signal
       2'b01: Q <= D; // on rising clock edge, set output to data if enabled
       2'b00: Q <= Q; // hold output when disabled
