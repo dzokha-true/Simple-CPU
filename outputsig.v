@@ -17,5 +17,8 @@ module outputsig(state, opcode, branch, PC_step, tribuf, r_en);
 	always @(state) begin
 		case (state)
 			5'b00001, 5'b00001, 5'b00001: PC_step <= 1'b1;
+		endcase
+	end
+endmodule
 			
 			
