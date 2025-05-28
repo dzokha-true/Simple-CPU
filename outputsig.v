@@ -31,3 +31,5 @@ module outputsig(state, opcode, inst_reg, branch, PC_step, tribuf, r_en);
 		endcase
 	end
 endmodule
+			
+			
