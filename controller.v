@@ -9,7 +9,7 @@ module controller(clk, rst, start, code, inst_reg, r_en_OH, tri_controller_OH, b
 
     find_ns next(.state(curr_state), .opcode(code[22:20]), .next_state(next_state), .start(start));
 	 
-    state_reg state_register(.d(next_state), .clk(clk), .rst(rst), .q(curr_state);
+    state_reg state_register(.d(next_state), .clk(clk), .rst(rst), .q(curr_state));
 	 
     outputsig outsig(.state(curr_state), .instr(code), .r_en(r_en), .tribuf(tri_controller), .branch(branch));
     
