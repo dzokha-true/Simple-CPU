@@ -15,6 +15,6 @@ module controller(clk, rst, start, code, inst_reg, r_en_OH, tri_controller_OH, b
     outputsig outsig(.state(curr_state), .instr(code), .r_en(r_en), .tribuf(tri_controller), .branch(branch));
     
     //decoder
-    binary_to_onehot r_en_decoder(.fiveBit(r_en), .onehot(r_en_OH));
-    binary_to_onehot tri_decoder(.fiveBit(tri_controller), .onehot(tri_controller_OH));
+    binary_to_onehot r_en_decoder(.fourBit(r_en), .onehot(r_en_OH));
+    binary_to_onehot tri_decoder(.fourBit(tri_controller), .onehot(tri_controller_OH));
 endmodule
