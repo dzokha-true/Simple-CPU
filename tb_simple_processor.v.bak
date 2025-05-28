@@ -1,0 +1,102 @@
+`timescale 1ns / 1ps
+
+module tb_simple_processor;
+
+    // Testbench signals
+    reg clk;
+    reg reset;
+    reg start;
+    reg write;
+    reg [22:0] program_in;
+
+    // Instantiate the Unit Under Test (UUT)
+    simple_processor DUT (
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .write(write),
+        .program_in(program_in)
+        // Note: simple_processor module has no outputs.
+        // You will need to observe internal signals of DUT (e.g., DUT.bus, DUT.address, DUT.code)
+        // using your simulator's waveform viewer or hierarchical signal access in $monitor.
+    );
+
+    // Clock generation
+    localparam CLK_PERIOD = 10; // Clock period of 10ns
+    always begin
+        clk = 0; #(CLK_PERIOD/2);
+        clk = 1; #(CLK_PERIOD/2);
+    end
+
+    // Stimulus and simulation control
+    initial begin
+        $display("Starting Testbench for simple_processor");
+
+        // Initialize inputs
+        reset = 1; // Assert reset
+        start = 0;
+        write = 0;
+        program_in = 23'h000000;
+
+        // Apply reset for a few clock cycles
+        #(CLK_PERIOD * 2);
+        reset = 0; // De-assert reset
+        $display("Time=%0t: Reset de-asserted", $time);
+        #(CLK_PERIOD);
+
+        // --- Scenario 1: Load and run a hypothetical first instruction ---
+        $display("Time=%0t: Scenario 1 - Attempting to load first instruction", $time);
+        program_in = 23'h123456; // Example instruction value
+        write = 1; // Assert write - assuming this loads program_in into an internal instruction register
+        #(CLK_PERIOD); // Hold write for one clock cycle
+        write = 0;
+        $display("Time=%0t: program_in = %h, write pulsed", $time, program_in);
+
+        start = 1; // Assert start to begin processing
+        $display("Time=%0t: Start asserted", $time);
+
+        // Let the processor run for some cycles
+        #(CLK_PERIOD * 10);
+        start = 0; // De-assert start (optional, depends on processor design)
+        $display("Time=%0t: Start de-asserted after 10 cycles", $time);
+        #(CLK_PERIOD * 2);
+
+        // --- Scenario 2: Load and run a hypothetical second instruction ---
+        $display("Time=%0t: Scenario 2 - Attempting to load second instruction", $time);
+        program_in = 23'hAAAAAA; // Another example instruction
+        write = 1; // Assert write
+        #(CLK_PERIOD);
+        write = 0;
+        $display("Time=%0t: program_in = %h, write pulsed", $time, program_in);
+
+        start = 1; // Assert start again
+        $display("Time=%0t: Start asserted for second instruction", $time);
+
+        // Let it run for some more cycles
+        #(CLK_PERIOD * 10);
+
+        // --- End of Test ---
+        $display("Time=%0t: Testbench finished.", $time);
+        $finish;
+    end
+
+    // Monitoring internal signals (requires hierarchical access)
+    // These signals are internal to your 'simple_processor' module.
+    // Their exact names depend on your 'simple_processor.v' file.
+    // Make sure the paths (e.g., DUT.bus, DUT.address) are correct.
+    initial begin
+        // Wait for reset to be low before starting monitor
+        @(negedge reset);
+        #(CLK_PERIOD/4); // Stagger monitor slightly from clock edge
+        $monitor("Time=%0t, clk=%b, rst=%b, start=%b, wr=%b, prg_in=%h | ADDR=%h, BUS=%h, CODE=%h, IR=%h, incPC=%b, branch=%b",
+                 $time, clk, reset, start, write, program_in,
+                 DUT.address,    // Hierarchical access to internal 'address' wire
+                 DUT.bus,        // Hierarchical access to internal 'bus' wire
+                 DUT.code,       // Hierarchical access to internal 'code' wire
+                 DUT.inst_reg,   // Hierarchical access to internal 'inst_reg' wire
+                 DUT.inc_PC,     // Hierarchical access to internal 'inc_PC' wire
+                 DUT.branch      // Hierarchical access to internal 'branch' wire
+        );
+    end
+
+endmodule

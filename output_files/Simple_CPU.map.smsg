@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at pc.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/pc.v Line: 11

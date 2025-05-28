@@ -12,10 +12,10 @@ module binary_to_onehot (fiveBit, onehot);
             5'b00100: onehot <= 10'd8; // 4
             5'b00101: onehot <= 10'd16; // 5
             5'b00110: onehot <= 10'd32; // 6
-            5'b00111: onehot <= 10'h64; // 7
-            5'b01000: onehot <= 10'h128; // 8
-            5'b01001: onehot <= 10'h256; // 9
-            5'b01010: onehot <= 10'h512; // 10
+            5'b00111: onehot <= 10'd64; // 7
+            5'b01000: onehot <= 10'd128; // 8
+            5'b01001: onehot <= 10'd256; // 9
+            5'b01010: onehot <= 10'd512; // 10
         endcase
     end
 endmodule

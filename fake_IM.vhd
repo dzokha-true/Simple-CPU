@@ -1,0 +1,15 @@
+module fake_IM(address,code);
+
+	input[5:0] address;
+	output reg[22:0] code;
+
+	always @(address) begin
+		case (address)
+			5h'00 : begin code <= {3'b000, 4'h0, 16h'0000}; end
+			5h'01 : begin code <= {3'b000, 4'h0, 16h'0001}; end
+			5h'02 : begin code <= {3'b000, 4'h0, 16h'0002}; end
+			5h'03 : begin code <= {3'b000, 4'h0, 16h'0020}; end
+			5h'04 : begin code <= {3'b000, 4'h0, 16h'0050}; end
+		endcase
+	end
+endmodule

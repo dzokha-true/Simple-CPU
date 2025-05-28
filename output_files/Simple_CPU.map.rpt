@@ -1,0 +1,737 @@
+Analysis & Elaboration report for Simple_CPU
+Wed May 28 02:44:40 2025
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[0].my_regs
+  5. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[1].my_regs
+  6. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[2].my_regs
+  7. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[3].my_regs
+  8. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[4].my_regs
+  9. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[5].my_regs
+ 10. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[6].my_regs
+ 11. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[7].my_regs
+ 12. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[15].my_tris
+ 13. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[16].my_tris
+ 14. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[17].my_tris
+ 15. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[18].my_tris
+ 16. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[19].my_tris
+ 17. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:A_reg
+ 18. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|alu:my_alu
+ 19. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:G_reg
+ 20. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:G_tri
+ 21. Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:bus_tri
+ 22. Analysis & Elaboration Settings
+ 23. Port Connectivity Checks: "simple_processor:DUT|pc:my_pc"
+ 24. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:G_reg"
+ 25. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|alu:my_alu"
+ 26. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:A_reg"
+ 27. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[19].my_tris"
+ 28. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[18].my_tris"
+ 29. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[17].my_tris"
+ 30. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[16].my_tris"
+ 31. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[15].my_tris"
+ 32. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[7].my_regs"
+ 33. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[6].my_regs"
+ 34. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[5].my_regs"
+ 35. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[4].my_regs"
+ 36. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[3].my_regs"
+ 37. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[2].my_regs"
+ 38. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[1].my_regs"
+ 39. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[0].my_regs"
+ 40. Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath"
+ 41. Port Connectivity Checks: "simple_processor:DUT|controller:my_controller|outputsig:outsig"
+ 42. Port Connectivity Checks: "simple_processor:DUT|controller:my_controller|find_ns:next"
+ 43. Port Connectivity Checks: "simple_processor:DUT|controller:my_controller"
+ 44. Port Connectivity Checks: "simple_processor:DUT"
+ 45. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Failed - Wed May 28 02:44:40 2025              ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; Simple_CPU                                     ;
+; Top-level Entity Name         ; tb_simple_processor                            ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[0].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[1].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[2].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[3].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[4].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[5].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[6].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:reg_gen[7].my_regs ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[15].my_tris ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[16].my_tris ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[17].my_tris ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[18].my_tris ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[19].my_tris ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:A_reg ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|alu:my_alu ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; ALU_OP_PASS_B  ; 00    ; Unsigned Binary                                                          ;
+; ALU_OP_ADD     ; 01    ; Unsigned Binary                                                          ;
+; ALU_OP_XOR     ; 10    ; Unsigned Binary                                                          ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|register:G_reg ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:G_tri ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_processor:DUT|datapath:my_datapath|tri_buf:bus_tri ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; num_bits       ; 16    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                            ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                          ; Setting             ; Default Value      ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8      ;                    ;
+; Top-level entity name                                                           ; tb_simple_processor ; Simple_CPU         ;
+; Family name                                                                     ; Cyclone V           ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                 ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                 ;
+; Enable compact report table                                                     ; Off                 ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                ;
+; Preserve fewer node names                                                       ; On                  ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                ; Auto               ;
+; Safe State Machine                                                              ; Off                 ; Off                ;
+; Extract Verilog State Machines                                                  ; On                  ; On                 ;
+; Extract VHDL State Machines                                                     ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                  ; On                 ;
+; Parallel Synthesis                                                              ; On                  ; On                 ;
+; DSP Block Balancing                                                             ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                  ; On                 ;
+; Power-Up Don't Care                                                             ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                      ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                 ; Off                ;
+; Optimization Technique                                                          ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                              ; 70                  ; 70                 ;
+; Auto Carry Chains                                                               ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                 ; Off                ;
+; Auto ROM Replacement                                                            ; On                  ; On                 ;
+; Auto RAM Replacement                                                            ; On                  ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                  ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                  ; On                 ;
+; Strict RAM Replacement                                                          ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                           ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                  ; On                 ;
+; Report Parameter Settings                                                       ; On                  ; On                 ;
+; Report Source Assignments                                                       ; On                  ; On                 ;
+; Report Connectivity Checks                                                      ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                   ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                               ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                 ; 100                ;
+; Clock MUX Protection                                                            ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                 ; Off                ;
+; Block Design Naming                                                             ; Auto                ; Auto               ;
+; SDC constraint protection                                                       ; Off                 ; Off                ;
+; Synthesis Effort                                                                ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                  ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                  ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                 ; Off                ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|pc:my_pc"                                                                                                                ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                      ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; branch ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:G_reg"                                                                                              ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; d_in  ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; d_out ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; d     ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; q     ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|alu:my_alu"                                                                                                                                    ;
++---------------+---------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type    ; Severity         ; Details                                                                                                                                                                ;
++---------------+---------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a             ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                 ;
+; b             ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                 ;
+; alu_op        ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                 ;
+; result        ; Output  ; Warning          ; Output or bidir port (8 bits) is smaller than the port expression (16 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND. ;
+; operand_a     ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; operand_b     ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; alu_op_select ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
++---------------+---------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:A_reg"                                                                                              ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; d_in  ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; d_out ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; d     ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; q     ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[19].my_tris"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[18].my_tris"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[17].my_tris"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[16].my_tris"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[15].my_tris"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[7].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[6].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[5].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[4].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[3].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[2].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[1].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath|register:reg_gen[0].my_regs"                                                                                 ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst_n ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; q     ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; rst   ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|datapath:my_datapath"                                                                                                                         ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type    ; Severity         ; Details                                                                                                                                      ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset             ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; write             ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; tri_controler_OH  ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; inc_PC            ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; branch            ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; inst_reg          ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; rst_n             ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tri_controller_OH ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|controller:my_controller|outputsig:outsig"                                                                                                                          ;
++----------------+---------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type    ; Severity         ; Details                                                                                                                                                               ;
++----------------+---------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; code           ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                ;
+; r_en           ; Output  ; Warning          ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; tri_controller ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                ;
+; inc_pc         ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                                                ;
+; opcode         ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
+; inst_reg       ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
+; PC_step        ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
+; tribuf         ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                              ;
++----------------+---------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|controller:my_controller|find_ns:next"                                                                                                 ;
++------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type    ; Severity         ; Details                                                                                                                                      ;
++------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; code       ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
+; next_state ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; opcode     ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; rst        ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT|controller:my_controller"                                                                                 ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------+
+; Port              ; Type    ; Severity         ; Details                                                                                                  ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------+
+; tri_controler_OH  ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                   ;
+; tri_controller_OH ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------------+---------+------------------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "simple_processor:DUT" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; clk  ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Wed May 28 02:44:29 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Simple_CPU -c Simple_CPU --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: pc File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/pc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tri_buf.v
+    Info (12023): Found entity 1: tri_buf File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/tri_buf.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file simple_processor.v
+    Info (12023): Found entity 1: simple_processor File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: register File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file outputsig.v
+    Info (12023): Found entity 1: outputsig File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file one_hot_decoder.v
+    Info (12023): Found entity 1: binary_to_onehot File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file find_ns.v
+    Info (12023): Found entity 1: find_ns File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/find_ns.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
+    Info (12023): Found entity 1: datapath File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controller.v
+    Info (12023): Found entity 1: controller File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/alu.v Line: 1
+Warning (10229): Verilog HDL Expression warning at tb_simple_processor.v(68): truncated literal to match 23 bits File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/tb_simple_processor.v Line: 68
+Info (12021): Found 1 design units, including 1 entities, in source file tb_simple_processor.v
+    Info (12023): Found entity 1: tb_simple_processor File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/tb_simple_processor.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file fake_im.v
+    Info (12023): Found entity 1: fake_IM File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/fake_IM.v Line: 1
+Info (12127): Elaborating entity "tb_simple_processor" for the top level hierarchy
+Warning (10175): Verilog HDL warning at tb_simple_processor.v(79): ignoring unsupported system task File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/tb_simple_processor.v Line: 79
+Info (12128): Elaborating entity "simple_processor" for hierarchy "simple_processor:DUT" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/tb_simple_processor.v Line: 22
+Info (12128): Elaborating entity "controller" for hierarchy "simple_processor:DUT|controller:my_controller" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 21
+Info (12128): Elaborating entity "find_ns" for hierarchy "simple_processor:DUT|controller:my_controller|find_ns:next" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 10
+Info (12128): Elaborating entity "outputsig" for hierarchy "simple_processor:DUT|controller:my_controller|outputsig:outsig" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 11
+Warning (10270): Verilog HDL Case Statement warning at outputsig.v(29): incomplete case statement has no default case item File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 29
+Info (10264): Verilog HDL Case Statement information at outputsig.v(29): all case item expressions in this case statement are onehot File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 29
+Warning (10240): Verilog HDL Always Construct warning at outputsig.v(28): inferring latch(es) for variable "PC_step", which holds its previous value in one or more paths through the always construct File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 28
+Warning (10034): Output port "branch" at outputsig.v(5) has no driver File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 5
+Info (10041): Inferred latch for "PC_step" at outputsig.v(28) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/outputsig.v Line: 28
+Info (12128): Elaborating entity "binary_to_onehot" for hierarchy "simple_processor:DUT|controller:my_controller|binary_to_onehot:r_en_decoder" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 14
+Warning (10270): Verilog HDL Case Statement warning at one_hot_decoder.v(7): incomplete case statement has no default case item File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 7
+Warning (10240): Verilog HDL Always Construct warning at one_hot_decoder.v(5): inferring latch(es) for variable "onehot", which holds its previous value in one or more paths through the always construct File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[0]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[1]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[2]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[3]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[4]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[5]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[6]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[7]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[8]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[9]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[10]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[11]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[12]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[13]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[14]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[15]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[16]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[17]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[18]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (10041): Inferred latch for "onehot[19]" at one_hot_decoder.v(5) File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/one_hot_decoder.v Line: 5
+Info (12128): Elaborating entity "datapath" for hierarchy "simple_processor:DUT|datapath:my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Info (12128): Elaborating entity "register" for hierarchy "simple_processor:DUT|datapath:my_datapath|register:reg_gen[0].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Info (12128): Elaborating entity "tri_buf" for hierarchy "simple_processor:DUT|datapath:my_datapath|tri_buf:tri_gen[15].my_tris" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 30
+Info (12128): Elaborating entity "alu" for hierarchy "simple_processor:DUT|datapath:my_datapath|alu:my_alu" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 40
+Info (12128): Elaborating entity "pc" for hierarchy "simple_processor:DUT|pc:my_pc" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at pc.v(7): object "low_val" assigned a value but never read File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/pc.v Line: 7
+Warning (10036): Verilog HDL or VHDL warning at pc.v(9): object "temp" assigned a value but never read File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/pc.v Line: 9
+Error (12002): Port "d_in" does not exist in macrofunction "G_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 41
+Error (12002): Port "d_out" does not exist in macrofunction "G_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 41
+Error (12002): Port "rst_n" does not exist in macrofunction "G_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 41
+Error (12002): Port "a" does not exist in macrofunction "my_alu" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 40
+Error (12002): Port "alu_op" does not exist in macrofunction "my_alu" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 40
+Error (12002): Port "b" does not exist in macrofunction "my_alu" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 40
+Error (12002): Port "d_in" does not exist in macrofunction "A_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 34
+Error (12002): Port "d_out" does not exist in macrofunction "A_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 34
+Error (12002): Port "rst_n" does not exist in macrofunction "A_reg" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 34
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[7].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[6].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[5].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[4].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[3].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[2].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[1].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "rst_n" does not exist in macrofunction "reg_gen[0].my_regs" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/datapath.v Line: 22
+Error (12002): Port "branch" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "inc_PC" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "inst_reg" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "reset" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "tri_controler_OH" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "write" does not exist in macrofunction "my_datapath" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 35
+Error (12002): Port "code" does not exist in macrofunction "outsig" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 11
+Error (12002): Port "inc_pc" does not exist in macrofunction "outsig" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 11
+Error (12002): Port "tri_controller" does not exist in macrofunction "outsig" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 11
+Error (12002): Port "code" does not exist in macrofunction "next" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/controller.v Line: 10
+Error (12002): Port "tri_controler_OH" does not exist in macrofunction "my_controller" File: C:/Users/owenj/Documents/ELEC2606/project/Simple-CPU/simple_processor.v Line: 21
+Warning (12241): 16 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 28 errors, 11 warnings
+    Error: Peak virtual memory: 4796 megabytes
+    Error: Processing ended: Wed May 28 02:44:40 2025
+    Error: Elapsed time: 00:00:11
+    Error: Total CPU time (on all processors): 00:00:30
+
+
