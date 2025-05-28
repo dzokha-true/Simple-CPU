@@ -3,12 +3,9 @@
 module tb_simple_processor;
 
     // Testbench signals
-    reg clk;
-    reg reset;
+    reg clk, reset, start;
 	 reg [3:0] count;
-    reg start;
-    reg write;
-    reg [22:0] program_in;
+    reg [22:0] instruction;
 	
     // Instantiate the Unit Under Test (UUT)
 
@@ -17,38 +14,40 @@ module tb_simple_processor;
         .reset(reset),
         .start(start),
         .write(write),
-        .program_in(program_in)
+        .program_in(instruction)
     );
+	 
 	 
 
     initial begin
-          #1;
+		  instruction = 23'd0;
         count = 4'b0000;
-		  start = 1'b1;
+		  clk = 1'b0;
 		  reset = 1'b0;
-		  write = 1'b0;
-    end
-
-    initial begin
-      clk = 1'b1;
-      #1;
-      repeat (1000) begin    // 1000 toggles, so 2000 edges total
-         #25 clk = ~clk;
-      end
+		  start = 1'b1;
     end
 
 
     always begin
-          #50
+        #50
         count = count + 4'b0001;
     end
+	 
+	 always begin
+		#25
+		clk = 1'b0;
+		#25
+		clk = 1'b1;
+	 end
 
-     // op(zz)rx(zzzz)ry(zzzz)data(zzzzzzzzzzzzzzzz)
+    
 
     always @(count) begin
         case (count)
-            4'b0000: begin reset = 1'b1; program_in = 23'bzzzzzzzzzzzzzzzzzzzzzzz; end 
-            4'b0001: begin reset = 1'b0; program_in = 23'b00000000000000000001001; end // load r1, 9
+            4'h0: begin reset = 1'b1; start = 1'b1; end
+				4'h1: begin reset = 1'b1; start = 1'b1; end
+				4'h2: begin reset = 1'b0; start = 1'b1; end
+				4'h3: begin reset = 1'b0; start = 1'b1; end
         endcase
     end
 endmodule
