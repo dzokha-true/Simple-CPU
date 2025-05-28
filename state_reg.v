@@ -7,12 +7,9 @@ module state_reg(d, clk, rst, q);
 		
 		always @ (posedge clk or posedge rst) begin
 			if (rst == 1'b1)
-				q_out <= {num_bits{1'b0}};
+				q <= {num_bits{1'b0}};
 			else begin
-				if (en == 1'b1)
-					q <= d;
-				else
-					q <= q;
+				q <= d;
 			end
 		end
 
