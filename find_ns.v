@@ -1,7 +1,7 @@
 module find_ns(state, code, rst, start, next_state);
 	
 	input[4:0] state;
-	input[3:0] code;
+	input[2:0] code;
 	input rst, start;
 	output reg[4:0] next_state;
 	
