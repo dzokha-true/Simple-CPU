@@ -1,18 +1,18 @@
-module find_ns(state, opcode, rst, start, next_state);
+module find_ns(state, code, rst, start, next_state);
 	
 	input[4:0] state;
-	input[3:0] opcode;
+	input[3:0] code;
 	input rst, start;
 	output reg[4:0] next_state;
 	
-	always @(rst, state, start, opcode) begin
+always @(rst, state, start, code) begin
 		if (rst == 1'b1)
 			next_state <= 5'b11111;
 		else begin
 			case (state)
 				5'b00000:
 					begin
-						case (opcode)
+						case (code)
 							3'b000:  next_state <= 5'b00001; //load
 							3'b001:  next_state <= 5'b00010; //mov
 							3'b010:  next_state <= 5'b00011; //add

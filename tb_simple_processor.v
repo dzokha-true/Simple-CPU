@@ -13,16 +13,18 @@ module tb_simple_processor;
     integer cycle_count = 0;
 
     // Instantiate the Unit Under Test (UUT)
-    simple_processor DUT (
+
+    simple_processor uut (
         .clk(clk),
         .reset(reset),
         .start(start),
         .write(write),
         .program_in(program_in)
     );
+	 
 
     // Clock generation
-    localparam CLK_PERIOD = 10; // Clock period of 10ns
+    localparam CLK_PERIOD = 50; // Clock period of 10ns
     always begin
         clk = 0; #(CLK_PERIOD/2);
         clk = 1; #(CLK_PERIOD/2);
@@ -51,7 +53,7 @@ module tb_simple_processor;
         #(CLK_PERIOD);
 
         // --- Scenario 1: Load and run a hypothetical first instruction ---
-        program_in = 23'h000001; // Example instruction value
+        program_in = 23'h000001; // Load register 0
         write = 1; // Assert write
         #(CLK_PERIOD); // Hold write for one clock cycle
         write = 0;

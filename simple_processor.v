@@ -12,7 +12,7 @@ controller my_controller(
     .clk(clk), 
     .rst(reset), 
     .start(start), 
-    .code(code), 
+    .code(program_in), 
     .inst_reg(inst_reg), 
     .r_en_OH(r_en_OH), 
     .tri_controller_OH(tri_controller_OH), 
@@ -27,7 +27,7 @@ datapath my_datapath(
     .tri_controller_OH(tri_controller_OH), 
     .bus(bus), 
     .address(address), 
-    .code(code), 
+    .code(program_in)
 );
 /*
 pc my_pc(
