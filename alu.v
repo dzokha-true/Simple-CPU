@@ -1,14 +1,17 @@
-module alu (
-    input [15:0] operand_a,
-    input [15:0] operand_b,
-    input [1:0] alu_op_select, // Control signal for operation
-    output reg [15:0] result
-);
+module alu (a, b, alu_op_select, result);
+    input [15:0] a;
+    input [15:0] b;
+    input [2:0] alu_op_select; // Control signal for operation
+    output reg [15:0] result;
 
     // ALU Operation Select Codes
-    parameter ALU_OP_PASS_B = 2'b00;
-    parameter ALU_OP_ADD    = 2'b01;
-    parameter ALU_OP_XOR    = 2'b10;
+    parameter ALU_OP_PASS   = 3'b000;
+    parameter ALU_OP_ADD    = 3'b010;
+    parameter ALU_OP_XOR    = 3'b011;
+	 parameter ALU_OP_OR     = 3'b100;
+	 parameter ALU_OP_AND    = 3'b101;
+	 
+	 
     // parameter ALU_OP_UNUSED = 2'b11; // Future use
 
     always @(*) begin // Combinational
@@ -16,7 +19,10 @@ module alu (
             ALU_OP_PASS_B: result = operand_b;
             ALU_OP_ADD:    result = operand_a + operand_b;
             ALU_OP_XOR:    result = operand_a ^ operand_b;
-            default:       result = 16'h00; // Default or error case
+				ALU_OP_OR:     result = operand_a | operand_b;
+				ALU_OP_AND:    result = operand_a & operand_b;
+				
+            default:       result = 8'h00; // Default or error case
         endcase
     end
 
