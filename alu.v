@@ -16,7 +16,7 @@ module alu (a, b, alu_op_select, result);
 
     always @(*) begin // Combinational
         case (alu_op_select)
-            ALU_OP_PASS_B: result = b;
+            ALU_OP_PASS:   result = b;
             ALU_OP_ADD:    result = a + b;
             ALU_OP_XOR:    result = a ^ b;
 	    ALU_OP_OR:     result = a | b;
