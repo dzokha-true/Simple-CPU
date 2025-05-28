@@ -5,13 +5,11 @@ module tb_simple_processor;
     // Testbench signals
     reg clk;
     reg reset;
+	 reg [3:0] count;
     reg start;
     reg write;
     reg [22:0] program_in;
 	
-    // Cycle counter (can be useful for correlating with waveforms)
-    integer cycle_count = 0;
-
     // Instantiate the Unit Under Test (UUT)
 
     simple_processor uut (
@@ -23,52 +21,34 @@ module tb_simple_processor;
     );
 	 
 
-    // Clock generation
-    localparam CLK_PERIOD = 50; // Clock period of 10ns
-    always begin
-        clk = 0; #(CLK_PERIOD/2);
-        clk = 1; #(CLK_PERIOD/2);
-    end
-
-    // Increment cycle counter on positive clock edge
-    always @(posedge clk) begin
-        if (!reset) begin // Optionally, only count when not in reset
-            cycle_count = cycle_count + 1;
-        end else begin
-            cycle_count = 0; // Reset counter during reset
-        end
-    end
-
-    // Stimulus and simulation control
     initial begin
-        // Initialize inputs
-        reset = 1; // Assert reset
-        start = 0;
-        write = 0;
-        program_in = 23'h000000;
-
-        // Apply reset for a few clock cycles
-        #(CLK_PERIOD * 2);
-        reset = 0; // De-assert reset
-        #(CLK_PERIOD);
-
-        // --- Scenario 1: Load and run a hypothetical first instruction ---
-        program_in = 23'h000001; // Load register 0
-        write = 1; // Assert write
-        #(CLK_PERIOD); // Hold write for one clock cycle
-        write = 0;
-
-        start = 1; // Assert start to begin processing
-
-        // Let the processor run for some cycles
-        #(CLK_PERIOD * 10);
-        start = 0; // De-assert start
-
-        #(CLK_PERIOD * 2);
-
-        
-        // --- End of Test ---
-        $finish;
+          #1;
+        count = 4'b0000;
+		  start = 1'b1;
+		  reset = 1'b0;
+		  write = 1'b0;
     end
 
+    initial begin
+      clk = 1'b1;
+      #1;
+      repeat (1000) begin    // 1000 toggles, so 2000 edges total
+         #25 clk = ~clk;
+      end
+    end
+
+
+    always begin
+          #50
+        count = count + 4'b0001;
+    end
+
+     // op(zz)rx(zzzz)ry(zzzz)data(zzzzzzzzzzzzzzzz)
+
+    always @(count) begin
+        case (count)
+            4'b0000: begin reset = 1'b1; program_in = 23'bzzzzzzzzzzzzzzzzzzzzzzz; end 
+            4'b0001: begin reset = 1'b0; program_in = 23'b00000000000000000001001; end // load r1, 9
+        endcase
+    end
 endmodule
