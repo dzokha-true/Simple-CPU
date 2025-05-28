@@ -40,3 +40,14 @@ simulation/questa/rtl_work/_lib1_0.qdb
 simulation/questa/rtl_work/_lib1_0.qpg
 simulation/questa/rtl_work/_lib1_0.qtl
 simulation/questa/rtl_work/_vmake
+
+Simple_CPU.qpf
+Simple_CPU.qsf
+Simple_CPU.qws
+alu.v.bak
+controller.v.bak
+datapath.v.bak
+fake_IM.vhd
+in_out_register.v.bak
+one_hot_decoder.v.bak
+tb_simple_processor.v.bak
