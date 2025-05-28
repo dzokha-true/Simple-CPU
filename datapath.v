@@ -34,8 +34,8 @@ module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
 	 
 	register A_reg(.d(bus), .clk(clk), .rst(rst_n), .en(r_en_OH[10]), .q(reg_out[10]));
     alu my_alu(
-        .operand_a(reg_out[10]),
-        .operand_b(bus),
+        .a(reg_out[10]),
+        .b(bus),
         .alu_op_select(code[22:20]),
         .result(alu_out)
     );
