@@ -51,7 +51,7 @@ module tb_simple_processor;
         #(CLK_PERIOD);
 
         // --- Scenario 1: Load and run a hypothetical first instruction ---
-        program_in = 23'h123456; // Example instruction value
+        program_in = 23'h00000; // Example instruction value
         write = 1; // Assert write
         #(CLK_PERIOD); // Hold write for one clock cycle
         write = 0;

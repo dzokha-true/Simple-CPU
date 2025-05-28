@@ -15,7 +15,7 @@ module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
         for (i = 0; i<8; i=i+1) begin : reg_gen
             register my_regs(
                 .clk(clk),
-                .rst_n(rst_n),
+                .rst(rst_n),
                 .en(r_en_OH[i]),
                 .d(bus),
                 .q(reg_out[i])
@@ -31,14 +31,14 @@ module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
         end
     endgenerate
 	 
-	register A_reg(.d_in(bus), .clk(clk), .rst_n(rst_n), .en(r_en_OH[10]), .d_out(reg_out[10]));
+	register A_reg(.d(bus), .clk(clk), .rst(rst_n), .en(r_en_OH[10]), .q(reg_out[10]));
     alu my_alu(
-        .a(reg_out[1]),
-        .b(reg_out[2]),
-        .alu_op(code[22:20]),
+        .operand_a(reg_out[1]),
+        .operand_b(reg_out[2]),
+        .alu_op_select(code[22:20]),
         .result(alu_out)
     );
-    register G_reg(.d_in(alu_out), .clk(clk), .rst_n(rst_n), .en(r_en_OH[9]), .d_out(reg_out[9]));
+    register G_reg(.d(alu_out), .clk(clk), .rst(rst_n), .en(r_en_OH[9]), .q(reg_out[9]));
     //tri_buf for G_reg
     tri_buf G_tri(
         .enable(tri_controller_OH[9]),

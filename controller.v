@@ -7,8 +7,8 @@ module controller(clk, rst, start, code, inst_reg, r_en_OH, tri_controller_OH, b
     wire [4:0] curr_state, next_state, r_en, tri_controller;
     wire end_instruction;
 
-    find_ns next(.state(curr_state), .code(code[22:20]), .next_state(next_state), .start(start));
-	outputsig outsig(.state(curr_state), .code(code), .r_en(r_en), .tri_controller(tri_controller), .branch(branch), .inc_pc(inc_pc));
+    find_ns next(.state(curr_state), .opcode(code[22:20]), .next_state(next_state), .start(start));
+	outputsig outsig(.state(curr_state), .opcode(code), .r_en(r_en), .tribuf(tri_controller), .branch(branch));
     
     //decoder
     binary_to_onehot r_en_decoder(.fiveBit(r_en), .onehot(r_en_OH));

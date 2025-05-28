@@ -15,25 +15,21 @@ controller my_controller(
     .code(code), 
     .inst_reg(inst_reg), 
     .r_en_OH(r_en_OH), 
-    .tri_controler_OH(tri_controller_OH), 
+    .tri_controller_OH(tri_controller_OH), 
     .branch(branch), 
     .inc_pc(inc_PC)
 );
 
 datapath my_datapath(
     .clk(clk), 
-    .reset(reset), 
-    .write(write), 
+    .rst_n(reset), 
     .r_en_OH(r_en_OH), 
-    .tri_controler_OH(tri_controller_OH), 
+    .tri_controller_OH(tri_controller_OH), 
     .bus(bus), 
-    .inc_PC(inc_PC), 
-    .branch(branch), 
     .address(address), 
     .code(code), 
-    .inst_reg(inst_reg)
 );
-
+/*
 pc my_pc(
     .bus(bus), 
     .clk(clk), 
@@ -43,6 +39,7 @@ pc my_pc(
     .write(write), 
     .address(address)
 );
+*/
 
 //decoder
 
