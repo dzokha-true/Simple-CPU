@@ -4,7 +4,8 @@ module controller(clk, rst, start, code, inst_reg, r_en_OH, tri_controller_OH, b
     output [9:0] r_en_OH, tri_controller_OH;
     output branch, inc_pc;
 
-    wire [4:0] curr_state, next_state, r_en, tri_controller; 
+    wire [4:0] curr_state, next_state;
+    wire [3:0] r_en, tri_controller; 
     wire end_instruction;
 
     find_ns next(.state(curr_state), .code(code[22:20]), .next_state(next_state), .start(start));
