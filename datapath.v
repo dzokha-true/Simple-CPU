@@ -1,7 +1,7 @@
 module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
     input clk;
     input rst_n;
-    input [19:0] r_en_OH, tri_controller_OH;
+    input [9:0] r_en_OH, tri_controller_OH;
     input [22:0] code;
     input [5:0] address;
     output [15:0] bus;
@@ -32,6 +32,7 @@ module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
         end
     endgenerate
 	 
+	register A_reg(.d(bus), .clk(clk), .rst(rst_n), .en(r_en_OH[9]), .q(reg_out[9]));
 	register A_reg(.d(bus), .clk(clk), .rst(rst_n), .en(r_en_OH[9]), .q(reg_out[9]));
     alu my_alu(
         .a(reg_out[9]),
