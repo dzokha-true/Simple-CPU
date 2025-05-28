@@ -8,7 +8,7 @@ module tb_simple_processor;
     reg start;
     reg write;
     reg [22:0] program_in;
-	
+
     // Cycle counter (can be useful for correlating with waveforms)
     integer cycle_count = 0;
 
@@ -51,7 +51,7 @@ module tb_simple_processor;
         #(CLK_PERIOD);
 
         // --- Scenario 1: Load and run a hypothetical first instruction ---
-        program_in = 23'h000001; // Example instruction value
+        program_in = 23'h00000; // Example instruction value
         write = 1; // Assert write
         #(CLK_PERIOD); // Hold write for one clock cycle
         write = 0;
@@ -64,7 +64,17 @@ module tb_simple_processor;
 
         #(CLK_PERIOD * 2);
 
-        
+        // --- Scenario 2: Load and run a hypothetical second instruction ---
+        program_in = 23'hAAAAAA; // Another example instruction
+        write = 1; // Assert write
+        #(CLK_PERIOD);
+        write = 0;
+
+        start = 1; // Assert start again
+
+        // Let it run for some more cycles
+        #(CLK_PERIOD * 10);
+
         // --- End of Test ---
         $finish;
     end
