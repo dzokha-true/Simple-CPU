@@ -2,7 +2,7 @@ module simple_processor(reset, clk, start, write, program_in);
     input reset, clk, start, write;
     input[22:0] program_in;
 
-    wire [19:0] r_en_OH, tri_controller_OH;
+    wire [9:0] r_en_OH, tri_controller_OH;
     wire [15:0] bus;
     wire inc_PC, branch;
     wire [5:0] address;
