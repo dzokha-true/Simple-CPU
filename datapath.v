@@ -4,7 +4,7 @@ module datapath (clk, rst_n, r_en_OH, tri_controller_OH, code, address, bus);
     input [19:0] r_en_OH, tri_controller_OH;
     input [22:0] code;
     input [5:0] address;
-    ouput [15:0] bus;
+    output [15:0] bus;
 	 
 
     wire [15:0] reg_out[0:19]; // Output from registers
